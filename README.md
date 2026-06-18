@@ -1,104 +1,65 @@
 # Windows Endpoint Health Check Toolkit
 
-A menu-driven PowerShell toolkit for L1/L2 IT support endpoint checks.
+A read-only PowerShell toolkit for IT Support, L1/L2 technicians, and escalation teams.
 
-This project is designed for practical Windows troubleshooting and ticket escalation. It collects useful endpoint information and exports clean reports that can be attached to helpdesk tickets.
+This project helps a support technician quickly collect endpoint evidence before escalating a ticket. It standardizes checks, creates ticket-ready reports, and reduces manual troubleshooting time.
 
-## Features
+## What it checks
 
-- Quick endpoint health summary
-- Full endpoint health report
-- System information check
-- Disk and storage health check
-- Network health check
-- Security baseline check
-- Critical Windows services check
-- Pending reboot detection
-- Event log analyzer
-- Startup item and installed apps inventory
-- HTML, CSV, and JSON report exports
-- Timestamped logging
+- System information
+- Windows version and build
+- Uptime
+- Disk space
+- Network adapter status
+- IP and DNS configuration
+- Microsoft 365 connectivity basics
+- Pending reboot indicators
+- Key Windows services
+- Microsoft Defender status
+- Firewall profile status
+- BitLocker context where available
+- Startup items
+- Installed applications
+- Recent System and Application event log warnings/errors
 
-## Requirements
+## Output
 
-- Windows 10 or Windows 11
-- Windows PowerShell 5.1 or later
-- Administrator rights recommended for complete results
+The toolkit creates a timestamped report folder with:
+
+- CSV reports
+- JSON reports
+- HTML report
+- Log file
+- Ticket-ready summary
 
 ## How to run
-
-Open PowerShell as Administrator and run:
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Health_Check_Toolkit.ps1
 ```
 
-Run a full report directly without using the menu:
+Run with a custom output folder:
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Health_Check_Toolkit.ps1 -RunAll
+powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Health_Check_Toolkit.ps1 -OutputPath C:\Temp\EndpointReports
 ```
 
-Send reports to a custom folder:
+Run without automatically opening File Explorer:
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Health_Check_Toolkit.ps1 -RunAll -OutputPath C:\Temp\EndpointReports
+powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Health_Check_Toolkit.ps1 -NoExplorer
 ```
 
-## Output
+## Requirements
 
-By default, reports are saved on the desktop in:
-
-```text
-Endpoint_Health_Check_Reports
-```
-
-The toolkit creates:
-
-```text
-*.html
-*.csv
-*.json
-*.log
-```
-
-## Menu options
-
-| Option | Description |
-|---|---|
-| 1 | Quick endpoint health summary |
-| 2 | Full endpoint health report |
-| 3 | System information check |
-| 4 | Disk and storage check |
-| 5 | Network health check |
-| 6 | Security baseline check |
-| 7 | Critical services check |
-| 8 | Pending reboot check |
-| 9 | Event log analyzer |
-| 10 | Startup and installed apps inventory |
-| 11 | Open report folder |
+- Windows PowerShell 5.1+
+- Windows 10/11 or Windows Server
+- Administrator PowerShell recommended for complete results
 
 ## Safety
 
-This script is diagnostic-focused. It does not delete data, reset services, modify registry settings, or make destructive system changes.
+This script is diagnostic-only. It does not delete files, reset services, change registry values, change firewall settings, install software, or remove software.
 
-## Good use cases
+## Portfolio explanation
 
-- First-response helpdesk triage
-- Before/after troubleshooting evidence
-- Ticket escalation reports
-- Endpoint health audits
-- New device baseline checks
-
-## Suggested repo topics
-
-```text
-powershell
-windows
-it-support
-helpdesk
-endpoint-management
-troubleshooting
-sysadmin
-windows-11
-```
+This project demonstrates endpoint troubleshooting, PowerShell automation, evidence collection, reporting, and IT support documentation skills.
