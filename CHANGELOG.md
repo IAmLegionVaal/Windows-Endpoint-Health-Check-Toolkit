@@ -1,13 +1,18 @@
 # Changelog
 
-## 1.0.0 - 2026-06-18
-
-Initial release.
+## v1.0.0 - Polished portfolio release
 
 ### Added
 
-- Menu-driven PowerShell interface
-- Full endpoint health report
-- System, disk, network, security, services, reboot, startup, apps, and event log checks
-- HTML, CSV, JSON, and log exports
-- GitHub Actions workflow for PSScriptAnalyzer
+- Endpoint health check PowerShell script
+- CSV, JSON, HTML, TXT, and log output
+- README documentation
+- How-to-run guide
+- Sample output guide
+- Troubleshooting guide
+- Interview explanation
+- Example output files
+
+## 1.0.0 - 2026-06-18
+
+Initial release.
