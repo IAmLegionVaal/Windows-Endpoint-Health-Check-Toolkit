@@ -1,0 +1,5 @@
+ComputerName,Category,Check,Status,Value,Recommendation
+LAPTOP01,Disk,Free space C:,Warning,6.2 GB free,Low disk space can cause updates apps profiles and performance issues.
+LAPTOP01,System,Pending reboot,Warning,Pending reboot detected,Restart the endpoint before continuing with updates or app troubleshooting.
+LAPTOP01,Network,TCP 443 to login.microsoftonline.com,OK,Reachable,Internet M365 path is reachable on TCP 443.
+LAPTOP01,Security,Defender real-time protection,OK,Enabled,Microsoft Defender real-time protection is enabled.
