@@ -1,0 +1,26 @@
+[
+  {
+    "ComputerName": "LAPTOP01",
+    "Category": "Disk",
+    "Check": "Free space C:",
+    "Status": "Warning",
+    "Value": "6.2 GB free",
+    "Recommendation": "Low disk space can cause updates, apps, profiles, and performance issues."
+  },
+  {
+    "ComputerName": "LAPTOP01",
+    "Category": "System",
+    "Check": "Pending reboot",
+    "Status": "Warning",
+    "Value": "Pending reboot detected",
+    "Recommendation": "Restart the endpoint before continuing with updates or app troubleshooting."
+  },
+  {
+    "ComputerName": "LAPTOP01",
+    "Category": "Network",
+    "Check": "TCP 443 to login.microsoftonline.com",
+    "Status": "OK",
+    "Value": "Reachable",
+    "Recommendation": "Internet/M365 path is reachable on TCP 443."
+  }
+]
