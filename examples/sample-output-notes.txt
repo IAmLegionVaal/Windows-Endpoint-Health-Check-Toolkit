@@ -1,0 +1,7 @@
+Sample report files are generated when the toolkit runs.
+
+Typical files:
+- Full_Endpoint_Health_Report_YYYYMMDD_HHMMSS.html
+- Full_Endpoint_Health_Report_YYYYMMDD_HHMMSS.csv
+- Full_Endpoint_Health_Report_YYYYMMDD_HHMMSS.json
+- EndpointHealthCheck_YYYYMMDD_HHMMSS.log
