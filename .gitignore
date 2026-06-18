@@ -1,0 +1,14 @@
+# Reports and logs
+Endpoint_Health_Check_Reports/
+*.log
+*.csv
+*.json
+*.html
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# PowerShell
+*.ps1xml
+*.psm1~
