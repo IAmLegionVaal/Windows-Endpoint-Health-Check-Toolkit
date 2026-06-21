@@ -1,65 +1,51 @@
 # Windows Endpoint Health Check Toolkit
 
-A read-only PowerShell toolkit for IT Support, L1/L2 technicians, and escalation teams.
+A PowerShell toolkit for collecting endpoint evidence and applying selected guarded Windows repairs.
 
-This project helps a support technician quickly collect endpoint evidence before escalating a ticket. It standardizes checks, creates ticket-ready reports, and reduces manual troubleshooting time.
-
-## What it checks
-
-- System information
-- Windows version and build
-- Uptime
-- Disk space
-- Network adapter status
-- IP and DNS configuration
-- Microsoft 365 connectivity basics
-- Pending reboot indicators
-- Key Windows services
-- Microsoft Defender status
-- Firewall profile status
-- BitLocker context where available
-- Startup items
-- Installed applications
-- Recent System and Application event log warnings/errors
-
-## Output
-
-The toolkit creates a timestamped report folder with:
-
-- CSV reports
-- JSON reports
-- HTML report
-- Log file
-- Ticket-ready summary
-
-## How to run
+## Diagnostic script
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Health_Check_Toolkit.ps1
 ```
 
-Run with a custom output folder:
+The diagnostic script creates CSV, JSON, HTML, log and ticket-summary evidence covering operating system, storage, networking, services, Defender, firewall, BitLocker, startup items, applications and recent events.
+
+## Repair script
+
+Preview the standard repair:
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Health_Check_Toolkit.ps1 -OutputPath C:\Temp\EndpointReports
+powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Repair_Toolkit.ps1 -Repair -DryRun
 ```
 
-Run without automatically opening File Explorer:
+Run the standard repair:
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Health_Check_Toolkit.ps1 -NoExplorer
+powershell.exe -ExecutionPolicy Bypass -File .\Windows_Endpoint_Repair_Toolkit.ps1 -Repair
 ```
 
-## Requirements
+Target individual actions:
 
-- Windows PowerShell 5.1+
-- Windows 10/11 or Windows Server
-- Administrator PowerShell recommended for complete results
+```powershell
+.\Windows_Endpoint_Repair_Toolkit.ps1 -RestartService wuauserv,bits
+.\Windows_Endpoint_Repair_Toolkit.ps1 -RunDism -RunSfc
+.\Windows_Endpoint_Repair_Toolkit.ps1 -FlushDns
+.\Windows_Endpoint_Repair_Toolkit.ps1 -ClearTemp
+```
+
+## What the repair does
+
+- Restarts selected core Windows services.
+- Flushes the DNS resolver cache.
+- Runs DISM RestoreHealth and System File Checker.
+- Optionally removes stale files older than seven days from the current user’s temporary directory.
+- Captures before-and-after JSON verification data.
+- Supports `-DryRun`, confirmation prompts, action logs and clear exit codes.
 
 ## Safety
 
-This script is diagnostic-only. It does not delete files, reset services, change registry values, change firewall settings, install software, or remove software.
+Administrator rights are required for real repairs. The script does not modify firewall rules, BitLocker configuration, user accounts or installed applications. Temporary-file cleanup is explicit and limited to old items in the current user’s temp directory.
 
-## Portfolio explanation
+## Author
 
-This project demonstrates endpoint troubleshooting, PowerShell automation, evidence collection, reporting, and IT support documentation skills.
+Dewald Pretorius — L2 IT Support Engineer
