@@ -46,6 +46,6 @@ Target individual actions:
 
 Administrator rights are required for real repairs. The script does not modify firewall rules, BitLocker configuration, user accounts or installed applications. Temporary-file cleanup is explicit and limited to old items in the current user’s temp directory.
 
-## Author
+## Maintainer
 
-Dewald Pretorius — L2 IT Support Engineer
+IAmLegionVaal
